@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/skin.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".tab1").click(function () {
+                $(this).parent().parent().find(".content").show();
+                $(this).parent().parent().find(".content-2,.content-3").hide();
+                $(this).css("color", "#fff");
+                $(this).parent().find(".tab2,.tab3").css("color", "#333");
+            });
+            $(".tab2").click(function () {
+                $(this).parent().parent().find(".content-2").show();
+                $(this).parent().parent().find(".content,.content-3").hide();
+                $(this).css("color", "#fff");
+                $(this).parent().find(".tab1,.tab3").css("color", "#333");
+            });
+            $(".tab3").click(function () {
+                $(this).parent().parent().find(".content-3").show()
+                $(this).parent().parent().find(".content-2,.content").hide();
+                $(this).css("color", "#fff");
+                $(this).parent().find(".tab1,.tab2").css("color", "#333");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header rounded-7px">
+        <div class="logo">
+            <img src="~/Content/Images/logo.png" width="104" height="45" alt="Tavan Tarkhis" />
+        </div>
+        <div class="header-buttons">
+            <table border="0" cellspacing="0" cellpadding="0" class="buttons">
+                <tr>
+                    <td>
+                        <input type="submit" name="Submit" value="Submit ►" class="button" /></td>
+                    <td>
+                        <input type="submit" name="Submit" value="Submit ►" class="button" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="Submit" value="Submit ►" class="button top-padd" /></td>
+                    <td>
+                        <input type="submit" name="Submit" value="Submit ►" class="button top-padd" /></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="menubar rounded-7px">
+        <ul class="menu">
+            <li><a href="#">
+                <img src="~/Content/Images/home.png" width="13" height="14" /></a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="search-box">
+            <input name="" type="text" class="search-input" />
+        </div>
+        <div class="search-button">Search</div>
+    </div>
+    <div class="clear-fixed">
+        <div class="slideshow-box rounded-7px">
+            <img src="~/Content/Images/slider.png" width="625" height="265" />
+        </div>
+
+        <div class="right-column">
+            <div class="top-box">
+                <div class="title-bar">Title</div>
+                <div class="content">
+                    <div class="padding">content</div>
+                </div>
+            </div>
+            <div class="bottom-box rounded-7px">
+                <img src="~/Content/Images/sample.jpg" width="292" height="71" />
+            </div>
+        </div>
+    </div>
+        @RenderBody()
+ 
+    <div class="footer">
+        <div class="footer-content">
+            <div class="flogo">
+                <img src="~/Content/Images/logo.png" alt="" />
+            </div>
+            <div class="copyright">&copy; 2012 TAVAN TARKHIS Co.</div>
+            <div class="social-network">
+                <img src="~/Content/Images/twitter.png" /><img src="~/Content/Images/facebook.png" /><img src="~/Content/Images/youtube.png" />
+            </div>
+            <div class="flinks-box">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="33%">
+                            <div class="flink"><a href="#">link 1</a></div>
+                            <div class="flink"><a href="#">link 2 </a></div>
+                            <div class="flink"><a href="#">link 3 </a></div>
+                            <div class="flink"><a href="#">link 4 </a></div>
+                            <div class="flink"><a href="#">link 5 </a></div>
+                        </td>
+                        <td width="34%">
+                            <div class="flink"><a href="#">link 1</a></div>
+                            <div class="flink"><a href="#">link 2 </a></div>
+                            <div class="flink"><a href="#">link 3 </a></div>
+                            <div class="flink"><a href="#">link 4 </a></div>
+                            <div class="flink"><a href="#">link 5 </a></div>
+                        </td>
+                        <td width="33%">
+                            <div class="flink"><a href="#">link 1</a></div>
+                            <div class="flink"><a href="#">link 2 </a></div>
+                            <div class="flink"><a href="#">link 3 </a></div>
+                            <div class="flink"><a href="#">link 4 </a></div>
+                            <div class="flink"><a href="#">link 5 </a></div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
